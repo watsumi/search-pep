@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>QuestionList</h1>
     <div :id="questionListId">
       <template v-for="question in questions">
         <QuestionItem

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Question</h1>
     <QuestionList
       :questions="questions"
       question-list-id="question-list"
