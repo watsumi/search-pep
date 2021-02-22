@@ -7,7 +7,7 @@
       <Pep />
     </div>
     <div class="flex justify-center mt-16">
-      <router-link to="/question">
+      <router-link to="/question" class="hover:opacity-50">
         <Start />
       </router-link>
     </div>

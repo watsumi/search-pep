@@ -1,11 +1,9 @@
 <template>
     <div
-      :id="'q-'+question.id"
+      :id="'q-'+question.title"
       class="float-left md:float-left"
     >
-      <span class="h-12 w-12">
-        <img class='hover:opacity-50 container mx-auto h-20 w-20' :src="question.img">
-      </span>
+      <img class='hover:opacity-50 container mx-auto h-30 w-20' :src="question.img">
     </div>
 </template>
 

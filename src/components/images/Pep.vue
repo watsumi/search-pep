@@ -1,6 +1,6 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" width="168.325" height="247.194" viewBox="0 0 168.325 247.194">
-  <g id="Introduction" transform="translate(-33.591 -41.847)">
+<svg xmlns="http://www.w3.org/2000/svg" width="315.5" height="280.194" viewBox="0 0 315.5 280.194">
+  <g id="Introduction" transform="translate(-33.591 -8.847)">
     <g id="variations" transform="translate(-2046 -434)">
       <g id="images" transform="translate(126 110)">
         <g id="a-person_bust" data-name="a-person/bust" transform="translate(1920 324)">
@@ -21,6 +21,7 @@
         </g>
       </g>
     </g>
+    <text id="Title" transform="translate(272.092 47.847)" font-size="44" font-family="Klee-Medium, Klee" font-weight="500"><tspan x="-28.886" y="0">Hi!</tspan><tspan x="-76.89" y="75">I’m Pep</tspan></text>
   </g>
 </svg>
 </template>
