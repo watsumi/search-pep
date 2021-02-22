@@ -5,7 +5,10 @@
       question-list-id="question-list"
     >
     </QuestionList>
-    <CorrectModal />
+    <CorrectModal 
+      v-if="isVisibleModal"
+      @next-question="handleCloseModal"
+    />
   </div>
 </template>
 
@@ -22,10 +25,16 @@ export default {
   },
   data(){
     return {
+      isVisibleModal: false,
     }
   },
   computed: {
     ...Vuex.mapGetters(["questions"])
+  },
+  methods:{
+    handleCloseModal(){
+      this.isVisibleModal = false;
+    }
   }
 };
 </script>

@@ -39,7 +39,7 @@ export default {
     Pep,
     Next,
     Quit
-  }
+  },
 }
 </script>
 
