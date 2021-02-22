@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-tailwind": "tailwind build ./public/css/style.css -o ./src/asset/css/tailwind.css",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
