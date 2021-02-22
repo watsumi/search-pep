@@ -1,4 +1,4 @@
-# search-pep
+# saerch-pep
 
 ## Project setup
 ```
