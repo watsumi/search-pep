@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
+      <h1 class="text-4xl text-green-700 text-center font-semibold">Hello Tailwind</h1>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
