@@ -3,6 +3,7 @@
     <QuestionList
       :questions="questions"
       question-list-id="question-list"
+      @handleCorrectWrongJudgment="handleCorrectWrongJudgment"
     >
     </QuestionList>
     <CorrectModal 
@@ -32,6 +33,13 @@ export default {
     ...Vuex.mapGetters(["questions"])
   },
   methods:{
+    handleCorrectWrongJudgment(question){
+      if(question.title === 'pep'){
+        this.isVisibleModal = true;
+      } else {
+        this.isVisibleModal = false;
+      }
+    },
     handleCloseModal(){
       this.isVisibleModal = false;
     }

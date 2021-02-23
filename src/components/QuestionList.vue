@@ -1,13 +1,12 @@
 <template>
-  <div>
-    <div :id="questionListId">
-      <template v-for="question in questions">
-        <QuestionItem
-          :key="question.id"
-          :question="question"
-        />
-      </template>
-    </div>
+  <div :id="questionListId">
+    <template v-for="question in questions">
+      <QuestionItem
+        :key="question.id"
+        :question="question"
+        @handleCorrectWrongJudgment="handleCorrectWrongJudgment"
+      />
+    </template>
   </div>
 </template>
 
@@ -29,5 +28,10 @@ export default {
       required: true
     }
   },
+  methods: {
+    handleCorrectWrongJudgment(question){
+      this.$emit('handleCorrectWrongJudgment', question)
+    }
+  }
 }
 </script>
