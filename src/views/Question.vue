@@ -9,13 +9,10 @@
     </QuestionList>
     <CorrectModal 
       v-if="isVisibleCorrectModal"
-      @next-question="handleCloseCorrectModal"
       @count-up="clickCountUp"
     />
     <WrongModal
       v-if="isVisibleWrongModal"
-      @close-wrong-modal="handleCloseWrongModal"
-      @click.self="handleCloseWrongModal"
     />
   </div>
 </template>
@@ -51,7 +48,7 @@ export default {
         this.isVisibleWrongModal = true;
         setTimeout(
             function() {
-              this.isVisibleWrongModal = false
+              this.handleCloseWrongModal()
             }.bind(this),
             1000
           );
@@ -65,6 +62,7 @@ export default {
     },
     clickCountUp(){
       this.count_num++;
+      this.handleCloseCorrectModal();
     }
   }
 };

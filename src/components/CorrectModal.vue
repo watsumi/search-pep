@@ -15,7 +15,7 @@
         <div class="object-contain h-48 w-full hover:opacity-50">
           <div class="flex justify-center mt-16">
             <Next 
-              @click="clickCountUp"
+              @click.native="clickCountUp"
             />
           </div>
         </div>
@@ -44,7 +44,6 @@ export default {
   },
   methods:{
     clickCountUp(){
-       console.log('カウント')
       this.$emit('count-up')
     }
   }
