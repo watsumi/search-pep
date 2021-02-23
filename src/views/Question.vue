@@ -7,8 +7,13 @@
     >
     </QuestionList>
     <CorrectModal 
-      v-if="isVisibleModal"
-      @next-question="handleCloseModal"
+      v-if="isVisibleCorrectModal"
+      @next-question="handleCloseCorrectModal"
+    />
+    <WrongModal
+      v-if="isVisibleWrongModal"
+      @close-wrong-modal="handleCloseWrongModal"
+      @click.self="handleCloseWrongModal"
     />
   </div>
 </template>
@@ -17,16 +22,19 @@
 import Vuex from "vuex"
 import QuestionList from "../components/QuestionList"
 import CorrectModal from "../components/CorrectModal"
+import WrongModal from '../components/WrongModal.vue';
 
 export default {
   name: 'Question',
   components:{
     QuestionList,
     CorrectModal,
+    WrongModal,
   },
   data(){
     return {
-      isVisibleModal: false,
+      isVisibleCorrectModal: false,
+      isVisibleWrongModal: false,
     }
   },
   computed: {
@@ -35,13 +43,22 @@ export default {
   methods:{
     handleCorrectWrongJudgment(question){
       if(question.title === 'pep'){
-        this.isVisibleModal = true;
+        this.isVisibleCorrectModal = true;
       } else {
-        this.isVisibleModal = false;
+        this.isVisibleWrongModal = true;
+        setTimeout(
+            function() {
+              this.isVisibleWrongModal = false
+            }.bind(this),
+            1000
+          );
       }
     },
-    handleCloseModal(){
-      this.isVisibleModal = false;
+    handleCloseCorrectModal(){
+      this.isVisibleCorrectModal = false;
+    },
+    handleCloseWrongModal(){
+      this.isVisibleWrongModal = false;
     }
   }
 };
