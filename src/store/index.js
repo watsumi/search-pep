@@ -12,10 +12,8 @@ export default new Vuex.Store({
   },
   mutations: {
     addQuestion: (state, add_q) => {
-      console.log(add_q);
       let tmp = state.questions
       state.questions = {...add_q,...tmp};
-      console.log(state.questions);
     }
   },
   actions: {
@@ -26,8 +24,6 @@ export default new Vuex.Store({
         if (num < 10) {num = '0'+num}
         add_q[add_q.length] = {title: i+92, img: require(`/public/images/${num}.svg`)};
       }
-      console.log(add_q);
-      console.log(pow_num);
       return state.commit('addQuestion',add_q)
     }
   },

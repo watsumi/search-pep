@@ -7,9 +7,9 @@
       <Pep />
     </div>
     <div class="flex justify-center mt-16">
-      <router-link to="/question" class="hover:opacity-50">
-        <Start />
-      </router-link>
+      <div class="hover:opacity-50">
+        <Start  @click.native="reload"/>
+      </div>
     </div>
   </div>
 </template>
@@ -26,6 +26,11 @@ export default {
     Logo,
     Pep,
     Start
+  },
+  methods: {
+    reload() {
+      this.$router.go({path: this.$router.push('/question'), force: true});
+    },
   }
 }
 </script>

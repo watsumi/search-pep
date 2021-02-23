@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1 class="text-6xl text-center">STAGE-{{count_num}}</h1>
+    <h1 class="text-6xl text-center">STAGE-{{countNum}}</h1>
     <QuestionList
-      :questions="questions"
+      :questions="shuffleQuestions"
       question-list-id="question-list"
       @handleCorrectWrongJudgment="handleCorrectWrongJudgment"
     >
@@ -34,14 +34,21 @@ export default {
     return {
       isVisibleCorrectModal: false,
       isVisibleWrongModal: false,
-      count_num: 1,
+      countNum: 1,
+      shuffleQuestions: [],
     }
   },
   computed: {
     ...Vuex.mapGetters(["questions"]),
     pow_num(){
-      return Math.pow(1.5, this.count_num);
+      return Math.pow(1.5, this.countNum);
     },
+  },
+  mounted(){
+    this.shuffleQuestions = this.questions
+  },
+  updated(){
+    this.shuffleQuestions = this.shuffle(this.questions)
   },
   methods:{
     ...Vuex.mapActions([
@@ -68,13 +75,20 @@ export default {
       this.isVisibleWrongModal = false;
     },
     async clickCountUp(pow_num){
-      // console.log(this.questions);
-      this.count_num++;
+      this.countNum++;
       pow_num = this.pow_num;
       await this.increaseQuestion(pow_num);
       this.handleCloseCorrectModal();
-      console.log(this.questions);
     },
+    shuffle: function(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        let r = Math.floor(Math.random() * (i + 1))
+        let tmp = array[i]
+        array[i] = array[r]
+        array[r] = tmp
+      }
+      return array
+    }
   }
 };
 </script>
