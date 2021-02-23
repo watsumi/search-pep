@@ -20,7 +20,6 @@ export default {
   },
   props:{
     questions:{
-      type: Object,
       required: true
     },
     questionListId:{

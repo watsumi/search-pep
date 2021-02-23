@@ -5,17 +5,19 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    questions:[{title: 'pep', img: require('/public/images/pep.svg')}],
+    questions:[
+      {title: 'pep', img: require('/public/images/pep.svg')},
+    ],
   },
   getters: {
-    questions: state => state.questions
+    questions: function(state){
+      return state.questions
+    }
   },
   mutations: {
     addQuestion: (state, add_q) => {
-      console.log(add_q);
       let tmp = state.questions
-      state.questions = {...add_q,...tmp};
-      console.log(state.questions);
+      state.questions = {...add_q, ...tmp};
     }
   },
   actions: {
@@ -26,8 +28,6 @@ export default new Vuex.Store({
         if (num < 10) {num = '0'+num}
         add_q[add_q.length] = {title: i+92, img: require(`/public/images/${num}.svg`)};
       }
-      console.log(add_q);
-      console.log(pow_num);
       return state.commit('addQuestion',add_q)
     }
   },

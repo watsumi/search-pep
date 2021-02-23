@@ -21,7 +21,9 @@
         </div>
         <router-link to="/" class="object-contain h-48 w-full hover:opacity-50">  
           <div class="flex justify-center mt-16">
-            <Quit />
+            <Quit 
+              @click.native="reload"
+            />
           </div>
         </router-link>
       </div>
@@ -46,6 +48,9 @@ export default {
     clickCountUp(){
       this.$emit('count-up')
     },
+    reload(){
+        this.$router.go({path: this.$router.push('/'), force: true});
+    }
   }
 }
 </script>
