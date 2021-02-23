@@ -5,15 +5,19 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    questions:[{title: 'pep', img: require('/public/images/pep.svg')}],
+    questions:[
+      {title: 'pep', img: require('/public/images/pep.svg')},
+    ],
   },
   getters: {
-    questions: state => state.questions
+    questions: function(state){
+      return state.questions
+    }
   },
   mutations: {
     addQuestion: (state, add_q) => {
       let tmp = state.questions
-      state.questions = {...add_q,...tmp};
+      state.questions = {...add_q, ...tmp};
     }
   },
   actions: {

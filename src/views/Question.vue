@@ -1,8 +1,17 @@
 <template>
   <div>
+    <header class="flex justify-between p-4 border-b items-center">
+      <button 
+        class="py-1 px-4 border-4 border-black rounded hover:opacity-50"
+        @click="handleOpenCorrectModal"
+      >
+        GIVE UP
+      </button>
+    </header>
     <h1 class="text-6xl text-center">STAGE-{{countNum}}</h1>
+    <span class="p-5"/>
     <QuestionList
-      :questions="shuffleQuestions"
+      :questions="questions"
       question-list-id="question-list"
       @handleCorrectWrongJudgment="handleCorrectWrongJudgment"
     >
@@ -32,41 +41,36 @@ export default {
   },
   data(){
     return {
-      isVisibleCorrectModal: false,
-      isVisibleWrongModal: false,
-      countNum: 1,
-      shuffleQuestions: [],
+      isVisibleCorrectModal: false, //正解時のモーダル表示切り替え
+      isVisibleWrongModal: false, //不正解時のモーダル表示切り替え
+      countNum: 1, //ステージの番号
     }
   },
   computed: {
     ...Vuex.mapGetters(["questions"]),
     pow_num(){
-      return Math.pow(1.5, this.countNum);
+      return Math.pow(1.5, this.countNum); //問題数を1.5のステージ数の累乗分増やすための数値
     },
-  },
-  mounted(){
-    this.shuffleQuestions = this.questions
-  },
-  updated(){
-    this.shuffleQuestions = this.shuffle(this.questions)
   },
   methods:{
     ...Vuex.mapActions([
-      'increaseQuestion',
-      'fetchQuestions'
+      'increaseQuestion', //Vuexのactions-問題を1.5のステージ数の累乗分増やす
     ]),
     handleCorrectWrongJudgment(question){
       if(question.title === 'pep'){
-        this.isVisibleCorrectModal = true;
+        this.isVisibleCorrectModal = true; //選択した画像のタイトルがpepであれば正解時のモーダル表示
       } else {
-        this.isVisibleWrongModal = true;
+        this.isVisibleWrongModal = true; //選択した画像のタイトルがpepでなければ不正解時のモーダル表示
         setTimeout(
             function() {
-              this.handleCloseWrongModal()
+              this.handleCloseWrongModal() //不正解時のモーダルを１秒間表示
             }.bind(this),
             1000
           );
       }
+    },
+    handleOpenCorrectModal(){
+      this.isVisibleCorrectModal = true;
     },
     handleCloseCorrectModal(){
       this.isVisibleCorrectModal = false;
@@ -77,17 +81,19 @@ export default {
     async clickCountUp(pow_num){
       this.countNum++;
       pow_num = this.pow_num;
-      await this.increaseQuestion(pow_num);
+      this.increaseQuestion(pow_num);
       this.handleCloseCorrectModal();
+      this.shuffle(pow_num); 
     },
-    shuffle: function(array) {
-      for (let i = array.length - 1; i > 0; i--) {
+    shuffle(pow_num) {
+      for (let i = Math.floor(pow_num)-1; i > 0; i--) { //フィッシャー–イェーツのシャッフルアルゴリズム
         let r = Math.floor(Math.random() * (i + 1))
-        let tmp = array[i]
-        array[i] = array[r]
-        array[r] = tmp
+        let tmp = this.questions[i]
+        this.questions[i] = this.questions[r]
+        this.questions[r] = tmp
+        console.log(this.questions[1])
       }
-      return array
+      return this.questions
     }
   }
 };
