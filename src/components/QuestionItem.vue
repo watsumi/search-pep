@@ -16,7 +16,6 @@ export default {
       type: Object,
       require: true
     }
-    ['handleCorrectWrongJudgment']
   },
   methods:{
     handleCorrectWrongJudgment(question){
