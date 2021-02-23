@@ -40,7 +40,7 @@ export default {
   computed: {
     ...Vuex.mapGetters(["questions"]),
     pow_num(){
-      return Math.pow(this.count_num, this.count_num);
+      return Math.pow(1.5, this.count_num);
     },
   },
   methods:{
