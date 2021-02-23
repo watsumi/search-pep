@@ -1,5 +1,6 @@
 module.exports = {
-  outputDir: './docs',
+  publicPath: '/search-pep/',
+  outputDir: 'docs',
   devServer: {
     disableHostCheck: true
   }
