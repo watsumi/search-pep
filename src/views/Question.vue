@@ -38,9 +38,16 @@ export default {
     }
   },
   computed: {
-    ...Vuex.mapGetters(["questions"])
+    ...Vuex.mapGetters(["questions"]),
+    pow_num(){
+      return Math.pow(this.count_num, this.count_num);
+    },
   },
   methods:{
+    ...Vuex.mapActions([
+      'increaseQuestion',
+      'fetchQuestions'
+    ]),
     handleCorrectWrongJudgment(question){
       if(question.title === 'pep'){
         this.isVisibleCorrectModal = true;
@@ -60,10 +67,14 @@ export default {
     handleCloseWrongModal(){
       this.isVisibleWrongModal = false;
     },
-    clickCountUp(){
+    async clickCountUp(pow_num){
+      // console.log(this.questions);
       this.count_num++;
+      pow_num = this.pow_num;
+      await this.increaseQuestion(pow_num);
       this.handleCloseCorrectModal();
-    }
+      console.log(this.questions);
+    },
   }
 };
 </script>

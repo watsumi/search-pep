@@ -45,7 +45,7 @@ export default {
   methods:{
     clickCountUp(){
       this.$emit('count-up')
-    }
+    },
   }
 }
 </script>

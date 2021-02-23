@@ -20,7 +20,7 @@ export default {
   },
   props:{
     questions:{
-      type: Array,
+      type: Object,
       required: true
     },
     questionListId:{
@@ -31,6 +31,11 @@ export default {
   methods: {
     handleCorrectWrongJudgment(question){
       this.$emit('handleCorrectWrongJudgment', question)
+    }
+  },
+  computed: {
+    questionLists(){
+      return this.questions
     }
   }
 }
