@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="text-6xl text-center">STAGE-{{count_num}}</h1>
     <QuestionList
       :questions="questions"
       question-list-id="question-list"
@@ -9,6 +10,7 @@
     <CorrectModal 
       v-if="isVisibleCorrectModal"
       @next-question="handleCloseCorrectModal"
+      @count-up="clickCountUp"
     />
     <WrongModal
       v-if="isVisibleWrongModal"
@@ -35,6 +37,7 @@ export default {
     return {
       isVisibleCorrectModal: false,
       isVisibleWrongModal: false,
+      count_num: 1,
     }
   },
   computed: {
@@ -59,6 +62,9 @@ export default {
     },
     handleCloseWrongModal(){
       this.isVisibleWrongModal = false;
+    },
+    clickCountUp(){
+      this.count_num++;
     }
   }
 };

@@ -12,11 +12,13 @@
         </div>
       </div>
       <div class="px-4 sm:flex sm:flex-row-reverse">
-        <router-link to="/question" class="object-contain h-48 w-full hover:opacity-50">
+        <div class="object-contain h-48 w-full hover:opacity-50">
           <div class="flex justify-center mt-16">
-            <Next />
+            <Next 
+              @click="clickCountUp"
+            />
           </div>
-        </router-link>
+        </div>
         <router-link to="/" class="object-contain h-48 w-full hover:opacity-50">  
           <div class="flex justify-center mt-16">
             <Quit />
@@ -40,6 +42,12 @@ export default {
     Next,
     Quit
   },
+  methods:{
+    clickCountUp(){
+       console.log('カウント')
+      this.$emit('count-up')
+    }
+  }
 }
 </script>
 
