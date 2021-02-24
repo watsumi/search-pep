@@ -18,7 +18,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import Logo from '../components/images/Logo'
 import Pep from '../components/images/Pep'
 import Start from '../components/images/Start'
