@@ -110,10 +110,9 @@ export default {
       return this.questions
     },
     twitterShare(){
-      //シェアする画面を設定
       var shareURL = 'https://twitter.com/intent/tweet?text=' + `Pepを${this.countNum-1}回見つけました！` + `%20%23Pepを探して%20%23SearchForPep%20%23web1week` + '&url=' + "https://watsumi.github.io/search-pep/";  
-      //シェア用の画面へ移行
-      location.href = shareURL
+
+      location.href = shareURL //シェア用の画面へ遷移
     }
   },
 };
