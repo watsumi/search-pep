@@ -57,6 +57,35 @@ export default {
       countNum: 1, //ステージの番号
     }
   },
+  head() {
+    return{
+    meta: [
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@watsumi_'},
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'SearchForPep'
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://watsumi.github.io/search-pep/'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: '人混みに紛れていくPepを探して！'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://watsumi.github.io/search-pep/images/pep.svg'
+      },
+      { hid: 'og:site_name', name: 'og:site_name', content: 'Pepを探して！'}
+    ]}
+  },
   computed: {
     ...Vuex.mapGetters(["questions"]),
     pow_num(){
