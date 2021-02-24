@@ -92,7 +92,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://watsumi.github.io/search-pep/images/pep.svg'
+        content: 'https://watsumi.github.io/search-pep/images/pep.png'
       },
       { hid: 'og:site_name', name: 'og:site_name', content: 'Pepを探して！'}
     ]}
