@@ -1,4 +1,4 @@
-# 「SearchForPep」〜人混みに紛れていくPepを探して！〜
+# 「SearchForPep」〜人混みに紛れていくPepを探して！
 
 [![Image from Gyazo](https://i.gyazo.com/372c7b408f434fe7282b4e1bb8a3379d.png)](https://gyazo.com/372c7b408f434fe7282b4e1bb8a3379d)
 
