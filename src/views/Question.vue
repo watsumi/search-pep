@@ -7,6 +7,12 @@
       >
         GIVE UP
       </button>
+      <button 
+        class="py-1 px-4 border-4 border-black rounded hover:opacity-50"
+        @click="handleOpenTweetModal"
+      >
+        Tweet
+      </button>
     </header>
     <h1 class="text-6xl text-center">STAGE-{{countNum}}</h1>
     <span class="p-5"/>
@@ -25,9 +31,13 @@
     />
     <GiveUpModal
       v-if="isVisibleGiveUpModal"
+      @twitter-share="twitterShare"
+      @click="handleCloseGiveUpModal"
     />
     <Tweet
+      v-if="isVisibleTweetModal"
       @twitter-share="twitterShare"
+      @click="handleCloseTweetModal"
     />
   </div>
 </template>
@@ -54,6 +64,7 @@ export default {
       isVisibleCorrectModal: false, //正解時のモーダル表示切り替え
       isVisibleWrongModal: false, //不正解時のモーダル表示切り替え
       isVisibleGiveUpModal: false, //ギブアップ時のモーダル表示切り替え
+      isVisibleTweetModal: false, //ギブアップ時のモーダル表示切り替え
       countNum: 1, //ステージの番号
     }
   },
@@ -120,6 +131,15 @@ export default {
     },
     handleOpenGiveUpModal(){
       this.isVisibleGiveUpModal = true;
+    },
+    handleCloseGiveUpModal(){
+      this.isVisibleGiveUpModal = false;
+    },
+    handleOpenTweetModal(){
+      this.isVisibleTweetModal = true;
+    },
+    handleCloseTweetModal(){
+      this.isVisibleTweetModal = false;
     },
     async clickCountUp(pow_num){
       this.countNum++;
