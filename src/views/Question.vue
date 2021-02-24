@@ -111,42 +111,10 @@ export default {
     },
     twitterShare(){
       //シェアする画面を設定
-      var shareURL = 'https://twitter.com/intent/tweet?text=' + "「Pepを探して！」" + `Pepを${this.countNum-1}回見つけました！` + '&url=' + "https://watsumi.github.io/search-pep/";  
+      var shareURL = 'https://twitter.com/intent/tweet?text=' + `Pepを${this.countNum-1}回見つけました！` + `%20%23Pepを探して%20%23SearchForPep%20%23web1week` + '&url=' + "https://watsumi.github.io/search-pep/";  
       //シェア用の画面へ移行
       location.href = shareURL
     }
   },
-  metaInfo: {
-    meta: [
-      {
-        property: 'og:site_name',
-        content: 'Pepを探して！'
-      },
-      {
-        property: 'og:type',
-        content: 'website'
-      },
-      {
-        property: 'og:url',
-        content: 'https://watsumi.github.io/search-pep/'
-      },
-      {
-        property: 'og:title',
-        content: 'SearchForPep'
-      },
-      {
-        property: 'og:description',
-        content: '人混みに紛れていくPepを見つけ出して！'
-      },
-      {
-        property: 'og:image',
-        content: 'https://www.w3.org/2000/svg'
-      },
-      {
-        name: 'twitter:card',
-        content: 'summary_large_image'
-      }
-    ]
-  }
 };
 </script>
