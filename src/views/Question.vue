@@ -154,7 +154,6 @@ export default {
         let tmp = this.questions[i]
         this.questions[i] = this.questions[r]
         this.questions[r] = tmp
-        console.log(this.questions[1])
       }
       return this.questions
     },
