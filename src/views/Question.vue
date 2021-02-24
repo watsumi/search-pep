@@ -3,7 +3,7 @@
     <header class="flex justify-between p-4 border-b items-center">
       <button 
         class="py-1 px-4 border-4 border-black rounded hover:opacity-50"
-        @click="handleOpenGiveUpModal"
+        @click="handleOpenCorrectModal"
       >
         GIVE UP
       </button>
@@ -23,9 +23,6 @@
     <WrongModal
       v-if="isVisibleWrongModal"
     />
-    <GiveUpModal
-      v-if="isVisibleGiveUpModal"
-    />
   </div>
 </template>
 
@@ -34,7 +31,6 @@ import Vuex from "vuex"
 import QuestionList from "../components/QuestionList"
 import CorrectModal from "../components/CorrectModal"
 import WrongModal from '../components/WrongModal.vue';
-import GiveUpModal from '../components/GiveUpModal.vue';
 
 export default {
   name: 'Question',
@@ -42,13 +38,11 @@ export default {
     QuestionList,
     CorrectModal,
     WrongModal,
-    GiveUpModal,
   },
   data(){
     return {
       isVisibleCorrectModal: false, //正解時のモーダル表示切り替え
       isVisibleWrongModal: false, //不正解時のモーダル表示切り替え
-      isVisibleGiveUpModal: false, //ギブアップ時のモーダル表示切り替え
       countNum: 1, //ステージの番号
     }
   },
@@ -83,9 +77,6 @@ export default {
     },
     handleCloseWrongModal(){
       this.isVisibleWrongModal = false;
-    },
-    handleOpenGiveUpModal(){
-      this.isVisibleGiveUpModal = true;
     },
     async clickCountUp(pow_num){
       this.countNum++;

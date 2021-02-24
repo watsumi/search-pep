@@ -1,36 +1,35 @@
 <template>
   <div>
-    <TopPage 
-      v-if="isVisibleTopPage"
-      @click.native="handleCloseTopPage"
-    />
-    <Question 
-      v-if="isVisibleQuestion"
-    />
+    <div class="flex justify-center mt-16">
+      <Logo />
+    </div>
+    <div class="flex justify-center mt-16">
+      <Pep />
+    </div>
+    <div class="flex justify-center mt-16">
+      <div class="hover:opacity-50">
+        <Start  @click.native="reload"/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import TopPage from './TopPage.vue'
-import Question from './Question.vue'
+import Logo from '../components/images/Logo'
+import Pep from '../components/images/Pep'
+import Start from '../components/images/Start'
 
 export default {
   name: 'Home',
-  data(){
-    return{
-      isVisibleTopPage: true, 
-      isVisibleQuestion: false, 
-    }
-  },
   components: {
-    TopPage,
-    Question
+    Logo,
+    Pep,
+    Start
   },
   methods: {
-    handleCloseTopPage(){
-      this.isVisibleTopPage = false;
-      this.isVisibleQuestion = true;
+    reload() {
+      this.$router.go({path: this.$router.push('/question'), force: true});
     },
   }
 }
