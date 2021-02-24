@@ -2,7 +2,7 @@
   <div>
     <TopPage 
       v-if="isVisibleTopPage"
-      @click.native="handleCloseTopPage"
+      @click.native="handleCloseTopPageOpenQuestion"
     />
     <Question 
       v-if="isVisibleQuestion"
@@ -28,7 +28,7 @@ export default {
     Question
   },
   methods: {
-    handleCloseTopPage(){
+    handleCloseTopPageOpenQuestion(){
       this.isVisibleTopPage = false;
       this.isVisibleQuestion = true;
     },
