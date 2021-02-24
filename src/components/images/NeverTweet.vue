@@ -1,6 +1,6 @@
 <template>
-<svg xmlns="http://www.w3.org/2000/svg" width="299.5" height="280.194" viewBox="0 0 299.5 280.194">
-  <g id="Introduction" transform="translate(-33.591 -8.847)">
+<svg xmlns="http://www.w3.org/2000/svg" width="299.5" height="260.194" viewBox="0 0 299.5 260.194">
+  <g id="Introduction" transform="translate(-33.591 -28.847)">
     <g id="variations" transform="translate(-2046 -434)">
       <g id="images" transform="translate(126 110)">
         <g id="a-person_bust" data-name="a-person/bust" transform="translate(1920 324)">
@@ -24,11 +24,8 @@
         </g>
       </g>
     </g>
-    <text id="Title" transform="translate(272.092 47.847)" font-size="44" font-family="Klee-Medium, Klee" font-weight="500"><tspan x="-60.368" y="0">Never</tspan><tspan x="-60.126" y="75">Tweet</tspan></text>
-    <g id="Logo_1_" transform="translate(229.592 147.791)">
-      <path id="white_background" d="M67.286,17.821c.045.711.045,1.423.045,2.141,0,21.877-15.24,47.107-43.108,47.107v-.013A40.28,40.28,0,0,1,1,59.633a28.237,28.237,0,0,0,3.606.239,28.821,28.821,0,0,0,18.816-7.1c-6.483-.134-12.168-4.754-14.154-11.5a13.86,13.86,0,0,0,6.84-.285C9.04,39.429,3.955,32.643,3.955,24.761v-.21a14.093,14.093,0,0,0,6.876,2.072C4.174,21.762,2.122,12.084,6.142,4.518c7.692,10.343,19.041,16.631,31.224,17.3A17.567,17.567,0,0,1,41.75,6a14.277,14.277,0,0,1,21.435.718,28.888,28.888,0,0,0,9.621-4.019,16.444,16.444,0,0,1-6.66,9.156,28.161,28.161,0,0,0,8.7-2.606A32.52,32.52,0,0,1,67.286,17.821Z" transform="translate(0 0)"/>
-    </g>
-    <text id="Title-2" data-name="Title" transform="matrix(0.985, -0.174, 0.174, 0.985, 276.592, 258.847)" font-size="19" font-family="Klee-Medium, Klee" font-weight="500"><tspan x="-56.24" y="0">サガサナイデ</tspan></text>
+    <text id="Title" transform="translate(272.092 67.847)" font-size="44" font-family="Klee-Medium, Klee" font-weight="500"><tspan x="-60.368" y="0">Never</tspan><tspan x="-60.126" y="75">Tweet</tspan></text>
+    <text id="Title-2" data-name="Title" transform="matrix(0.985, -0.174, 0.174, 0.985, 273.592, 226.847)" font-size="19" font-family="Klee-Medium, Klee" font-weight="500"><tspan x="-56.24" y="0">サガサナイデ</tspan></text>
   </g>
 </svg>
 </template>
