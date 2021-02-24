@@ -8,17 +8,10 @@
     <div class="inline-block align-bottom bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
       <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
         <div class="flex justify-center mt-16">
-          <Pep />
+          <Pep 
+            @click.native="twitterShare"
+          />
         </div>
-      </div>
-      <div class="px-4 sm:flex sm:flex-row-reverse">
-        <router-link to="/" class="object-contain h-48 w-full hover:opacity-50">  
-          <div class="flex justify-center mt-16">
-            <Quit 
-              @click.native="reload"
-            />
-          </div>
-        </router-link>
       </div>
     </div>
   </div>
@@ -27,16 +20,14 @@
 
 <script>
 import Pep from './images/Pep'
-import Quit from './images/Quit'
 export default {
-  name: "GiveUp",
+  name: "Tweet",
   components:{
     Pep,
-    Quit
   },
   methods:{
-    reload(){
-        this.$router.go({path: this.$router.push('/'), force: true});
+    twitterShare(){
+      this.$emit('twitter-share')
     }
   }
 }
