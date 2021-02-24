@@ -29,8 +29,8 @@ export default {
   },
   methods: {
     handleCloseTopPageOpenQuestion(){
-      this.isVisibleTopPage = false;
-      this.isVisibleQuestion = true;
+      this.isVisibleTopPage = false; //TopPageを非表示
+      this.isVisibleQuestion = true; //Questionを表示
     },
   }
 }
