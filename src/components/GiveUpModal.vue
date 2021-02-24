@@ -18,13 +18,13 @@
         結果をTweetする
       </button>
       <div class="px-4 sm:flex sm:flex-row-reverse">
-        <router-link to="/" class="object-contain h-48 w-full hover:opacity-50">  
+        <div class="object-contain h-48 w-full hover:opacity-50">  
           <div class="flex justify-center mt-16">
             <Quit 
               @click.native="reload"
             />
           </div>
-        </router-link>
+        </div>
       </div>
     </div>
   </div>

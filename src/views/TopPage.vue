@@ -14,6 +14,9 @@
     <Question 
       v-if="isVisibleQuestion"
     />
+  <footer>
+    Thanks for @pablostanley
+  </footer>
   </div>
 </template>
 
@@ -37,7 +40,7 @@ export default {
   },
   methods: {
     handleOpenQuestion(){
-      this.isVisibleQuestion = true;
+      this.$emit('handleCloseTopPageOpenQuestion');
     },
   }
 }
