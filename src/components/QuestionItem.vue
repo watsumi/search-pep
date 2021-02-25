@@ -1,6 +1,5 @@
 <template>
     <div
-      :id="'q-'+question.title"
       class="float-left md:float-left"
       @click="handleCorrectWrongJudgment(question)"
     >
