@@ -17,7 +17,7 @@ export default new Vuex.Store({
   mutations: {
     addQuestion: (state, add_q) => {
       let tmp = state.questions
-      state.questions = {...add_q, ...tmp};
+      state.questions.splice(0,tmp.length,...tmp,...add_q);
     }
   },
   actions: {
