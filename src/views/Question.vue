@@ -144,16 +144,16 @@ export default {
     async clickCountUp(pow_num){
       this.countNum++;
       pow_num = this.pow_num;
-      this.increaseQuestion(pow_num);
+      await this.increaseQuestion(pow_num);
       this.handleCloseCorrectModal();
-      this.shuffle(pow_num); 
+      this.shuffle(this.questions); 
     },
-    shuffle(pow_num) {
-      for (let i = Math.floor(pow_num)-1; i > 0; i--) { //フィッシャー–イェーツのシャッフルアルゴリズム
+    shuffle(array) {
+      for (let i = Math.floor(array.length)-1; i > 0; i--) { //フィッシャー–イェーツのシャッフルアルゴリズム
         let r = Math.floor(Math.random() * (i + 1))
-        let tmp = this.questions[i]
-        this.questions[i] = this.questions[r]
-        this.questions[r] = tmp
+        let tmp = array[i]
+        array[i] = array[r]
+        array[r] = tmp
       }
       return this.questions
     },
