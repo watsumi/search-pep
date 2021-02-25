@@ -149,7 +149,7 @@ export default {
       this.shuffle(this.questions); 
     },
     shuffle(array) {
-      for (let i = Math.floor(array.length)-1; i > 0; i--) { //フィッシャー–イェーツのシャッフルアルゴリズム
+      for (let i = Math.floor(Object.keys(array).length)-1; i > 0; i--) { //フィッシャー–イェーツのシャッフルアルゴリズム
         let r = Math.floor(Math.random() * (i + 1))
         let tmp = array[i]
         array[i] = array[r]
